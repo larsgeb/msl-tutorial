@@ -70,12 +70,12 @@ int main(int argc, char *argv[])
 
     size_t operation_repeats = 10;
 
-    std::chrono::steady_clock::time_point start = std::chrono::high_resolution_clock::now();
+    auto start = std::chrono::high_resolution_clock::now();
     for (size_t j = 0; j < operation_repeats; j++)
     {
         add_arrays(x, y, z_serial, arrayLength);
     }
-    std::chrono::steady_clock::time_point end = std::chrono::high_resolution_clock::now();
+    auto end = std::chrono::high_resolution_clock::now();
     float mean_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count() / float(operation_repeats);
     std::cout << std::setw(30) << "Mean time (SERIAL): ";
     std::cout << float(mean_duration) / 1000000.0 << "[ms]" << std::endl;
