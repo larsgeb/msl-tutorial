@@ -58,7 +58,7 @@ xcrun -sdk macosx metallib ops.air -o ops.metallib
 ```
 
 
-## M1 people
+## Intel x86 people
 
 ```console
 cd msl-tutorial
