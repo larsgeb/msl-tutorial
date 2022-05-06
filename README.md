@@ -21,10 +21,12 @@ brew install libomp
 4. Clone the repo
 
 ```
-git clone https://github.com/larsgeb/msl-tutorial.git
+    git clone https://github.com/larsgeb/msl-tutorial.git
 ```
 
 5. Build the different files
+
+## M1 people
 
 ```console
 cd msl-tutorial
@@ -54,6 +56,28 @@ xcrun -sdk macosx metallib ops.air -o ops.metallib
                                    -g src/tutorial03.cpp src/MetalOperations.cpp \
                                    -o build/tutorial03.x 
 ```
+
+
+## M1 people
+
+```console
+cd msl-tutorial
+
+# Compile Tutorial 01
+ /opt/homebrew/opt/gcc/bin/g++-11  -O2 -std=c++17 \
+                                   -g src/tutorial01.cpp \
+                                   -o build/tutorial01.x
+
+# Compile Tutorial 02
+ /opt/homebrew/opt/gcc/bin/g++-11  -O2 -std=c++17 \
+                                   -L/opt/homebrew/opt/libomp/lib -fopenmp \
+                                   -g src/tutorial02.cpp \
+                                   -o build/tutorial02.x
+
+# Compile Tutorial 03
+# Cry
+```
+
 
 6. Run the built applications
 
