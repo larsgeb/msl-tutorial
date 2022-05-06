@@ -1,0 +1,3 @@
+[submodule "plot"]
+	path = plot
+	url = https://github.com/fbbdev/plot.git

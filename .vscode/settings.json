@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "string_view": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__string": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "*.tcc": "cpp",
+        "ostream": "cpp",
+        "chrono": "cpp",
+        "iomanip": "cpp"
+    }
+}

@@ -1,0 +1,98 @@
+{
+	"version": "2.0.0",
+	"tasks": [{
+		"type": "cppbuild",
+		"label": "clang++ build Tutorial 1",
+		"command": "/opt/homebrew/opt/llvm/bin/clang++",
+		"args": [
+			"-O2",
+			"-std=c++17",
+			"-stdlib=libc++",
+			"-g",
+			"${workspaceFolder}/src/tutorial01.cpp",
+			"-o",
+			"${workspaceFolder}/build/tutorial01.x"
+		],
+		"options": {
+			"cwd": "${fileDirname}"
+		},
+		"problemMatcher": [
+			"$gcc"
+		],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		}
+	}, {
+		"type": "cppbuild",
+		"label": "clang++ build Tutorial 2",
+		"command": "/opt/homebrew/opt/llvm/bin/clang++",
+		"args": [
+			"-O3",
+			"-std=c++17",
+			"-L/opt/homebrew/opt/libomp/lib", "-fopenmp",
+			"-stdlib=libc++",
+			"-g",
+			"${workspaceFolder}/src/tutorial02.cpp",
+			"-o",
+			"${workspaceFolder}/build/tutorial02.x"
+		],
+		"options": {
+			"cwd": "${fileDirname}"
+		},
+		"problemMatcher": [
+			"$gcc"
+		],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		}
+	}, {
+		"type": "cppbuild",
+		"label": "clang++ build Tutorial 3",
+		"command": "/opt/homebrew/opt/llvm/bin/clang++",
+		"args": [
+			"-O3",
+			"-std=c++17",
+			"-L/opt/homebrew/opt/libomp/lib", "-fopenmp",
+			"-I${workspaceFolder}/metal-cpp", "-fno-objc-arc",
+			"-framework", "Metal", "-framework", "Foundation", "-framework", "MetalKit",
+			"-stdlib=libc++",
+			"-g",
+			"${workspaceFolder}/src/tutorial03.cpp",
+			"${workspaceFolder}/src/MetalOperations.cpp",
+			"-o",
+			"${workspaceFolder}/build/tutorial03.x"
+		],
+		"options": {
+			"cwd": "${fileDirname}"
+		},
+		"problemMatcher": [
+			"$gcc"
+		],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		},
+		"dependsOn": ["Build .metallib 03"]
+	}, {
+		"type": "shell",
+		"label": "Build .air 03",
+		"command": "xcrun",
+		"args": [
+			"-sdk", "macosx", "metal",
+			"-c", "${workspaceFolder}/src/ops.metal",
+			"-o", "${workspaceFolder}/ops.air"
+		]
+	}, {
+		"type": "shell",
+		"label": "Build .metallib 03",
+		"command": "xcrun",
+		"args": [
+			"-sdk", "macosx", "metallib", "${workspaceFolder}/ops.air",
+			"-o", "${workspaceFolder}/ops.metallib"
+		],
+		"dependsOn": ["Build .air 03"]
+
+	}]
+}
