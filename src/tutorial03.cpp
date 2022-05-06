@@ -26,8 +26,10 @@ bool equalArray(const float *x, const float *y, size_t arrayLength);
 int main(int argc, char *argv[])
 {
 
-    // size_t arrayLength = 1024;
-    size_t arrayLength = 67108864;
+    size_t arrayLength = 2048;
+    // size_t arrayLength = 134217728;
+
+    std::cout << "Array size: " << arrayLength << std::endl;
 
     // Load GPU
     MTL::Device *device = MTL::CreateSystemDefaultDevice();

@@ -52,7 +52,7 @@
 		"label": "clang++ build Tutorial 3",
 		"command": "/opt/homebrew/opt/llvm/bin/clang++",
 		"args": [
-			"-O3",
+			"-O2",
 			"-std=c++17",
 			"-L/opt/homebrew/opt/libomp/lib", "-fopenmp",
 			"-I${workspaceFolder}/metal-cpp", "-fno-objc-arc",
