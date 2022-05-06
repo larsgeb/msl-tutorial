@@ -71,6 +71,11 @@ int main(int argc, char *argv[])
 
     std::cout << std::setw(30) << "Threads used (PARALLEL): ";
     std::cout << omp_thread_count() << std::endl;
+
+    delete[] x;
+    delete[] y;
+    delete[] z_serial;
+    delete[] z_parallel;
 }
 
 void add_arrays(float *x, float *y, float *z, size_t length)

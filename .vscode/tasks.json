@@ -14,7 +14,7 @@
 			"${workspaceFolder}/build/tutorial01.x"
 		],
 		"options": {
-			"cwd": "${fileDirname}"
+			"cwd": "${workspaceFolder}"
 		},
 		"problemMatcher": [
 			"$gcc"
@@ -38,7 +38,7 @@
 			"${workspaceFolder}/build/tutorial02.x"
 		],
 		"options": {
-			"cwd": "${fileDirname}"
+			"cwd": "${workspaceFolder}"
 		},
 		"problemMatcher": [
 			"$gcc"
@@ -65,7 +65,7 @@
 			"${workspaceFolder}/build/tutorial03.x"
 		],
 		"options": {
-			"cwd": "${fileDirname}"
+			"cwd": "${workspaceFolder}"
 		},
 		"problemMatcher": [
 			"$gcc"

@@ -41,6 +41,10 @@ int main(int argc, char *argv[])
     add_arrays(x, y, z, arrayLength);
     std::cout << "Array x + y = z" << std::endl;
     output_array(z, arrayLength);
+
+    delete[] x;
+    delete[] y;
+    delete[] z;
 }
 
 void add_arrays(float *x, float *y, float *z, size_t length)

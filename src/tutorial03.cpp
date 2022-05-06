@@ -102,6 +102,9 @@ int main(int argc, char *argv[])
     mean_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count() / float(operation_repeats);
     std::cout << std::setw(30) << "Mean time (GPU): ";
     std::cout << float(mean_duration) / 1000000.0 << "[ms]" << std::endl;
+
+    delete[] z_serial;
+    delete[] z_parallel;
 }
 
 void add_arrays(float *x, float *y, float *z, size_t length)
