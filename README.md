@@ -64,18 +64,17 @@ xcrun -sdk macosx metallib ops.air -o ops.metallib
 cd msl-tutorial
 
 # Compile Tutorial 01
- /opt/homebrew/opt/gcc/bin/g++-11  -O2 -std=c++17 \
-                                   -g src/tutorial01.cpp \
-                                   -o build/tutorial01.x
+clang++  -O2 -std=c++17 \
+         -g src/tutorial01.cpp \
+         -o build/tutorial01.x
 
-# Compile Tutorial 02
- /opt/homebrew/opt/gcc/bin/g++-11  -O2 -std=c++17 \
-                                   -L/opt/homebrew/opt/libomp/lib -fopenmp \
-                                   -g src/tutorial02.cpp \
-                                   -o build/tutorial02.x
+# Compile Tutorial 02, no openmp :(
+clang++  -O2 -std=c++17 \
+         -g src/tutorial02.cpp \
+         -o build/tutorial02.x
 
 # Compile Tutorial 03
-# Cry
+# ... cry
 ```
 
 
