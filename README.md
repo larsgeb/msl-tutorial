@@ -58,7 +58,7 @@ xcrun -sdk macosx metallib ops.air -o ops.metallib
 ```
 
 
-## Intel x86 people
+## MacOS Intel x86 people
 
 ```console
 cd msl-tutorial
@@ -72,6 +72,27 @@ clang++  -O2 -std=c++17 \
 clang++  -O2 -std=c++17 \
          -g src/tutorial02.cpp \
          -o build/tutorial02.x
+
+# Compile Tutorial 03
+# ... cry
+```
+
+
+## Linux people
+
+```console
+cd msl-tutorial
+
+# Compile Tutorial 01
+g++ -O2 -std=c++17 \
+    -g src/tutorial01.cpp \
+    -o build/tutorial01.x
+
+# Compile Tutorial 02, no openmp :(
+g++ -O2 -std=c++17 \
+    -fopenmp
+    -g src/tutorial02.cpp \
+    -o build/tutorial02.x
 
 # Compile Tutorial 03
 # ... cry
